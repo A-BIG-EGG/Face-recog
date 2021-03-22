@@ -27,4 +27,7 @@ try:
     font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
     logging.info("Fonts defined")
 
-draw.text((120, 60), 'I am pooing', font = font15, fill = 0)
+    image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
+    draw = ImageDraw.Draw(image)
+
+    draw.text((120, 60), 'I am pooing', font = font15, fill = 0)
