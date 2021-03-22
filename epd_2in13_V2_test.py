@@ -24,6 +24,7 @@ try:
     epd.Clear(0xFF)
 
     # Drawing on the image
+    logging.info("Initialising font definitions")
     font15 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 15)
     font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
     logging.info("Fonts defined")
