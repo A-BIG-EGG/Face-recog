@@ -12,7 +12,6 @@ from PIL import Image,ImageDraw,ImageFont
 import traceback
 
 logging.basicConfig(level=logging.DEBUG)
-blackimage = blackimage.transpose(Image.ROTATE_270)
 
 try:
     logging.info("epd2in13_V2 Demo")
