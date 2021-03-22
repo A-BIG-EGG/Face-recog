@@ -12,6 +12,7 @@ from PIL import Image,ImageDraw,ImageFont
 import traceback
 
 logging.basicConfig(level=logging.DEBUG)
+blackimage = blackimage.transpose(Image.ROTATE_270)
 
 try:
     logging.info("epd2in13_V2 Demo")
@@ -33,7 +34,7 @@ try:
     draw.text((120, 60), 'I am pooing', font = font15, fill = 0)
     epd.display(epd.getbuffer(image))
     time.sleep(2)
-    
+
 except IOError as e:
     logging.info(e)
 
