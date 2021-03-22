@@ -31,3 +31,11 @@ try:
     draw = ImageDraw.Draw(image)
 
     draw.text((120, 60), 'I am pooing', font = font15, fill = 0)
+    
+except IOError as e:
+    logging.info(e)
+
+except KeyboardInterrupt:
+    logging.info("ctrl + c:")
+    epd2in13_V2.epdconfig.module_exit()
+    exit()
