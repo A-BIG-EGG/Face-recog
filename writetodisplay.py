@@ -32,7 +32,7 @@ try:
     draw = ImageDraw.Draw(image)
 
     draw.text((120, 60), 'I am pooing', font = font15, fill = 0)
-    epd.display(epd.getbuffer(image))
+    #epd.display(epd.getbuffer(image))
     time.sleep(2)
 
 except IOError as e:
