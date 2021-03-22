@@ -10,7 +10,7 @@ if os.path.exists(libdir):
 import logging
 from lib.waveshare_epd import epd2in13_V2
 import time
-from PIL import Image,ImageDraw,ImageFont, GRGEHRFGEJHFVB
+from PIL import Image,ImageDraw,ImageFont
 import traceback
 
 logging.basicConfig(level=logging.DEBUG)
