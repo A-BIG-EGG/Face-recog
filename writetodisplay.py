@@ -30,7 +30,7 @@ try:
     image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
     draw = ImageDraw.Draw(image)
 
-    draw.text((120, 60), 'I am pooing', font = font15, fill = 0)
+    draw.text((60, 60), 'I ❤ Angel', font = font15, fill = 0)
     image = image.transpose(Image.ROTATE_180) #rotates image?
     epd.display(epd.getbuffer(image))
     time.sleep(2)
