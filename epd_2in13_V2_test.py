@@ -24,8 +24,8 @@ try:
     epd.Clear(0xFF)
 
     # Drawing on the image
-    font15 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 15)
-    font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
+    #font15 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 15)
+    #font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
 
     logging.info("1.Drawing on the image...")
     image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
