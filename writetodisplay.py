@@ -24,13 +24,13 @@ try:
     # Drawing on the image
     logging.info("Initialising font definitions")
     font15 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 15)
-    font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
+    font40 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 40)
     logging.info("Fonts defined")
 
     image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
     draw = ImageDraw.Draw(image)
 
-    draw.text((60, 60), 'I <3 Angl', font = font24, fill = 0)
+    draw.text((60, 60), 'I <3 Angl', font = font40, fill = 0)
     image = image.transpose(Image.ROTATE_180) #rotates image?
     epd.display(epd.getbuffer(image))
     time.sleep(2)
