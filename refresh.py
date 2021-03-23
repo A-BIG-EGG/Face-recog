@@ -44,6 +44,8 @@ try:
 #        time.sleep(2)
         epd.init(epd.FULL_UPDATE)
         epd.Clear(0xFF)
+        epd.init(epd.FULL_UPDATE)
+        epd.Clear(0)
         num = num + 1
         if(num == -1):
             break
