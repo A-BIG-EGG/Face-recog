@@ -44,7 +44,7 @@ try:
         time_draw.text((30, 40), time.strftime('%H:%M:%S'), font = font48, fill = 0)
         epd.displayPartial(epd.getbuffer(time_image.transpose(Image.ROTATE_180)))
         num = num + 1
-        if(num == 10):
+        if(num == -1):
             break
     # epd.Clear(0xFF)
     logging.info("Clear...")
