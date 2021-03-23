@@ -40,7 +40,7 @@ try:
     epd.init(epd.PART_UPDATE)
     num = 0
     while (True):
-        time_draw.rectangle((epd.height, epd.width), fill = 0)
+        time_draw.rectangle((0,epd.height, 0, epd.width), fill = 0)
         time.sleep(2)
         epd.init(epd.FULL_UPDATE)
         epd.Clear(0xFF)
