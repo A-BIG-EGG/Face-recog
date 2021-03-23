@@ -9,7 +9,7 @@ faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontal
 log.basicConfig(filename='webcam.log',level=log.INFO)
 
 video_capture = cv2.VideoCapture(0)
-cv2.Flip(video_capture, FlipMode=-1)
+cv2.flip(video_capture, FlipMode=-1)
 anterior = 0
 
 while True:
