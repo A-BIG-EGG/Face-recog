@@ -47,6 +47,7 @@ try:
         time.sleep(1.6)
         epd.init(epd.FULL_UPDATE)
         epd.Clear(0)
+        time.sleep(1.6)        
         num = num + 1
         if(num == -1):
             break
