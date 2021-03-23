@@ -1,4 +1,4 @@
-import cv200
+import cv2
 import sys
 import logging as log
 import datetime as dt
