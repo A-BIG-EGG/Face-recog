@@ -4,6 +4,7 @@ General aim of this:
 3. E-ink displays results from Face AI
 
 Stretch goals:
+
 a. Integrate a button press to trigger this; or
 
 b. Use general face detection to trigger this
