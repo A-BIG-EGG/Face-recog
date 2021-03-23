@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INFO:root:faces: 1 at 2021-03-23 13:10:49.290020
 INFO:root:faces: 0 at 2021-03-23 13:10:54.723802
 INFO:root:faces: 1 at 2021-03-23 13:10:55.429030
@@ -1334,3 +1335,5 @@ INFO:root:faces: 0 at 2021-03-23 13:54:21.122366
 INFO:root:faces: 1 at 2021-03-23 13:54:26.682620
 INFO:root:faces: 0 at 2021-03-23 13:54:28.618568
 INFO:root:faces: 1 at 2021-03-23 13:54:42.015223
+=======
+>>>>>>> 33657f0ec759b9a3513cccd887455d276df28c8a
