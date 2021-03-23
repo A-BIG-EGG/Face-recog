@@ -40,7 +40,7 @@ try:
     epd.init(epd.PART_UPDATE)
     num = 0
     while (True):
-        #time_draw.rectangle((120, 80, 220, 105), fill = 255)
+        time_draw.rectangle((30, 40, 220, 105), fill = 255)
         time_draw.text((30, 40), time.strftime('%H:%M:%S'), font = font48, fill = 0)
         epd.displayPartial(epd.getbuffer(time_image.transpose(Image.ROTATE_180)))
         num = num + 1
