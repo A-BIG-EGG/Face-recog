@@ -7,10 +7,10 @@ import operator
 #   the subscription and endpoints for Face API and Vision API
 #   make sure endpoint is correct for your region, default is western us
 face_api_sub_key = 'e3e6b3ce-baab-45e2-8aaf-03e552c4cbe7'
-face_api_endpoint = 'https://westus.api.cognitive.microsoft.com/face/v1.0/detect'
+face_api_endpoint = 'https://uksouth.api.cognitive.microsoft.com/face/v1.0/detect'
 
 vision_api_sub_key = 'e3e6b3ce-baab-45e2-8aaf-03e552c4cbe7'
-vision_api_endpoint = 'westus.api.cognitive.microsoft.com'
+vision_api_endpoint = 'uksouth.api.cognitive.microsoft.com'
 
 
 class FaceAttribs(object):
