@@ -78,6 +78,7 @@ try:
         time_draw.text((120, 80), time.strftime('%H:%M:%S'), font = font24, fill = 0)
         time_image = time_image.transpose(Image.ROTATE_180) #rotates image
         epd.displayPartial(epd.getbuffer(time_image))
+        waitKey(2)
         num = num + 1
         if(num == 10):
             break
