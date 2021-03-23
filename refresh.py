@@ -41,6 +41,7 @@ try:
     num = 0
     while (True):
         time_draw.rectangle((30, 40, 220, 105), fill = 255)
+        time.sleep(2)
         epd.init(epd.FULL_UPDATE)
         epd.Clear(0xFF)
         num = num + 1
