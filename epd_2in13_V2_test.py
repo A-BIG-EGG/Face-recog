@@ -76,6 +76,7 @@ try:
     while (True):
         time_draw.rectangle((120, 80, 220, 105), fill = 255)
         time_draw.text((120, 80), time.strftime('%H:%M:%S'), font = font24, fill = 0)
+        time_image = time_image.transpose(Image.ROTATE_180) #rotates image
         epd.displayPartial(epd.getbuffer(time_image))
         num = num + 1
         if(num == 10):
