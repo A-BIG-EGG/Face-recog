@@ -70,13 +70,13 @@ try:
 
     epd.init(epd.FULL_UPDATE)
     epd.displayPartBaseImage(epd.getbuffer(time_image))
+    time_image = time_image.transpose(Image.ROTATE_180) #rotates image
 
     epd.init(epd.PART_UPDATE)
     num = 0
     while (True):
         time_draw.rectangle((120, 80, 220, 105), fill = 255)
         time_draw.text((120, 80), time.strftime('%H:%M:%S'), font = font24, fill = 0)
-        time_image = time_image.transpose(Image.ROTATE_180) #rotates image
         epd.displayPartial(epd.getbuffer(time_image))
         time.sleep(1)
         num = num + 1
