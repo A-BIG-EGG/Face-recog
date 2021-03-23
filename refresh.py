@@ -44,6 +44,7 @@ try:
 #        time.sleep(2)
         epd.init(epd.FULL_UPDATE)
         epd.Clear(0xFF)
+        time.sleep(1.6)
         epd.init(epd.FULL_UPDATE)
         epd.Clear(0)
         num = num + 1
