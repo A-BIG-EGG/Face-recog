@@ -1,6 +1,5 @@
 import cv2
 import sys
-import numpy as np
 import logging as log
 import datetime as dt
 from time import sleep
@@ -9,8 +8,7 @@ cascPath = "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 log.basicConfig(filename='webcam.log',level=log.INFO)
 
-#video_capture = cv2.VideoCapture(0)
-video_capture = cv2.flip(src = cv2.VideoCapture(0), flipCode=-1)
+video_capture = cv2.VideoCapture(0)
 anterior = 0
 
 while True:
