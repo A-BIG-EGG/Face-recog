@@ -7,14 +7,10 @@ from lib.ms_cognitive_imagerec import ms_WhatDoYouSee, ms_WhoDoYouSee, ms_GetFac
 from PIL import Image
 import requests
 
-from lib.camera_pi import Camera
-camera = Camera()
-image_file = 'image_file.png'
-body = camera.get_frame()
-
-#body = dict()
-#body["url"] = "https://ichef.bbci.co.uk/images/ic/1024x576/p081lz7v.jpg"
-#body = str(body)
+body = dict()
+body["url"] = "https://ichef.bbci.co.uk/images/ic/1024x576/p081lz7v.jpg"
+body = str(body)
+#body = open('testsmile.JPG','rb').read()
 
 headers = {
     'Content-Type': 'application/json',
