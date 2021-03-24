@@ -6,7 +6,7 @@ from time import sleep
 from lib.ms_cognitive_imagerec import ms_WhatDoYouSee, ms_WhoDoYouSee, ms_GetFaceAttribs, FaceAttribs
 from PIL import Image
 import requests
-from camera_pi import Camera
+from lib.camera_pi import Camera
 camera = Camera()
 
 body = camera.get_frame()
