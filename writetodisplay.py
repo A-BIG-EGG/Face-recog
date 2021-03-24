@@ -32,7 +32,7 @@ try:
 
     draw.text((35, 45), 'I <3 Angel', font = font40, fill = 0)
     image = image.transpose(Image.ROTATE_180) #rotates image?
-#    epd.display(epd.getbuffer(image))
+    epd.display(epd.getbuffer(image))
     time.sleep(2)
 
 except IOError as e:
