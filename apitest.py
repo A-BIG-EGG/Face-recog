@@ -6,10 +6,10 @@ from time import sleep
 from lib.ms_cognitive_imagerec import ms_WhatDoYouSee, ms_WhoDoYouSee, ms_GetFaceAttribs, FaceAttribs
 from PIL import Image
 import requests
-from lib.camera_pi import Camera
-camera = Camera()
 
-body = camera.get_frame()
+body = dict()
+body["url"] = "https://ichef.bbci.co.uk/images/ic/1024x576/p081lz7v.jpg"
+body = str(body)
 
 headers = {
     'Content-Type': 'application/json',
