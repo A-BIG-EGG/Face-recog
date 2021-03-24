@@ -81,7 +81,7 @@ def ms_WhoDoYouSee (body):
 
         api_url = face_api_endpoint
 
-        response = requests.post(api_url, headers=header, data=body, params=params)
+        response = requests.post(api_url, data=body, headers=header, params=params)
 
         #print (response.json())
         #response = conn.request('POST', uri_base + '/face/v1.0/detect', json=body, data=body, headers=headers, params=params)

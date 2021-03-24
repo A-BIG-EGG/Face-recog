@@ -26,7 +26,8 @@ FaceApiDetect = 'https://uksouthface.cognitiveservices.azure.com/face/v1.0/detec
 
 try:
     # REST Call
-    response = requests.post(FaceApiDetect, data=body, headers=headers, params=params)
+    #response = requests.post(FaceApiDetect, data=body, headers=headers, params=params)
+    response = ms_WhoDoYouSee(body)
     print("RESPONSE:" + str(response.json()))
 
 except Exception as e:
