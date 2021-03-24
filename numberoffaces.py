@@ -30,8 +30,8 @@ while True:
     )
 
 
-    if anterior != len(faces):
-        anterior = len(faces)
+#    if anterior != len(faces):
+#        anterior = len(faces)
         print('Number of faces: '+str(len(faces)))
 
 
