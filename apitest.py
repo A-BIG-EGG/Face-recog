@@ -7,7 +7,7 @@ from lib.ms_cognitive_imagerec import ms_WhatDoYouSee, ms_WhoDoYouSee, ms_GetFac
 from PIL import Image
 import requests
 
-from camera_pi import Camera
+from lib.camera_pi import Camera
 camera = Camera()
 image_file = 'image_file.png'
 body = camera.get_frame()
