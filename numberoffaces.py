@@ -32,7 +32,7 @@ while True:
 
 #    if anterior != len(faces):
 #        anterior = len(faces)
-        print('Number of faces: '+str(len(faces)))
+    print('Number of faces: '+str(len(faces)))
 
 
 # When everything is done, release the capture
