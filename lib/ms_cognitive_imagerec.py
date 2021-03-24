@@ -6,11 +6,11 @@ import operator
 # change this
 #   the subscription and endpoints for Face API and Vision API
 #   make sure endpoint is correct for your region, default is western us
-face_api_sub_key = 'e3e6b3ce-baab-45e2-8aaf-03e552c4cbe7'
-face_api_endpoint = 'https://uksouth.api.cognitive.microsoft.com/face/v1.0/detect'
+face_api_sub_key = 'a760241aebe44b1c80eab0e5e42425c7'
+face_api_endpoint = 'https://uksouthface.cognitiveservices.azure.com/face/v1.0/detect'
 
-vision_api_sub_key = 'e3e6b3ce-baab-45e2-8aaf-03e552c4cbe7'
-vision_api_endpoint = 'uksouth.api.cognitive.microsoft.com'
+vision_api_sub_key = 'cfad2127edc14f7f87466cf03731044b'
+vision_api_endpoint = 'https://uksouthvision.cognitiveservices.azure.com/'
 
 
 class FaceAttribs(object):
