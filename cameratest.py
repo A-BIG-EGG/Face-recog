@@ -28,8 +28,8 @@ camera.vflip = True #Rotate image by flipping v and h
 camera.hflip = True
 
 #Alert user to image being taken
-epd.init(epd.FULL_UPDATE)
-epd.Clear(0xFF)
+# epd.init(epd.FULL_UPDATE)
+# epd.Clear(0xFF)
 epd.init(epd.PART_UPDATE)
 time_draw.rectangle((120, 80, 220, 105), fill = 255)
 time_draw.text((15, 35), '3', font = font60, fill = 0)
