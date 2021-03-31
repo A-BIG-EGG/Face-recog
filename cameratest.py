@@ -23,8 +23,7 @@ faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontal
 epd = epd2in13_V2.EPD()
 font20 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 20)
 font60 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 60)
-time_image = Image.new('1', (epd.height, epd.width), 255)
-time_draw = ImageDraw.Draw(time_image)
+
 
 camera = PiCamera() #Define camera (won't work on non-pi devices)
 camera.vflip = True #Rotate image by flipping v and h
@@ -34,6 +33,8 @@ n = 0
 while True:
     #Alert user to image being taken with a 3,2,1 countdown, partially refreshed
     #Rotation must be there because the screen is upside down lol
+    time_image = Image.new('1', (epd.height, epd.width), 255)
+    time_draw = ImageDraw.Draw(time_image)
     epd.init(epd.FULL_UPDATE)
     epd.displayPartBaseImage(epd.getbuffer(time_image))
     epd.init(epd.PART_UPDATE)
@@ -77,7 +78,7 @@ while True:
             top_emotion_txt = "%s top emotion is %s at %2.f %% confidence"% (faceAttribs.gender_possessive, faceAttribs.top_emotion, faceAttribs.top_emotion_conf)
 
             iSeeText = "I see a %s age %d %s. %s. "% (faceAttribs.gender, faceAttribs.age, top_emotion_txt, glasses_txt) #Build sentence describing the results
-            iSeeText = textwrap.fill(iSeeText,28) #Wrap the text for future display
+            iSeeText = textwrap.fill(iSeeText,26) #Wrap the text for future display
             image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
             draw = ImageDraw.Draw(image)
             draw.text((10, 20), iSeeText, font = font20, fill = 0)
