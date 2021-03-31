@@ -25,8 +25,6 @@ font20 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 20)
 font60 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 60)
 time_image = Image.new('1', (epd.height, epd.width), 255)
 time_draw = ImageDraw.Draw(time_image)
-epd.init(epd.FULL_UPDATE)
-epd.displayPartBaseImage(epd.getbuffer(time_image))
 
 camera = PiCamera() #Define camera (won't work on non-pi devices)
 camera.vflip = True #Rotate image by flipping v and h
@@ -34,9 +32,10 @@ camera.hflip = True
 n = 0
 
 while True:
-        
     #Alert user to image being taken with a 3,2,1 countdown, partially refreshed
     #Rotation must be there because the screen is upside down lol
+    epd.init(epd.FULL_UPDATE)
+    epd.displayPartBaseImage(epd.getbuffer(time_image))
     epd.init(epd.PART_UPDATE)
     time_draw.rectangle((120, 80, 220, 105), fill = 255)
     time_draw.text((15, 35), '3', font = font60, fill = 0)
