@@ -64,7 +64,7 @@ if len(faces) > 0: #Action if there are faces in the frame
     try:
         response = ms_WhoDoYouSee(body) #Call API- see ms_cognitive_imagerec for details and options
         time.sleep(0.2)
-        faceAttribs = ms_GetFaceAttribs (response)
+        faceAttribs = ms_GetFaceAttribs (face)
     except Exception as e:
         print(e)
 else: #Action for no faces
