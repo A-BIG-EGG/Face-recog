@@ -14,7 +14,7 @@ camera.vflip = True
 camera.hflip = True
 time.sleep(2)
 
-camera.capture(img.jpg)
+camera.capture("img.jpg")
 
 body = open('img.jpg','rb').read()
 
