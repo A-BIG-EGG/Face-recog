@@ -77,8 +77,8 @@ while True:
             # iSeeText = "I see a %s age %d, %s. "% (faceAttribs.gender, faceAttribs.age, top_emotion_txt) #Build sentence describing the results
             # finalText = iSeeText + bald_text
             age_text = "Age: %d"% (faceAttribs.age)
-            hair_text = "Hair colour: %s (%2.f%%)"% (faceAttribs.top_haircolor, faceAttribs.top_haircolor_conf)
-            emotion_text = "Emotion: %s (%2.f%%)"% (faceAttribs.top_emotion, faceAttribs.top_emotion_conf)
+            hair_text = "Hair colour: %s %2.f%%"% (faceAttribs.top_haircolor, faceAttribs.top_haircolor_conf)
+            emotion_text = "Emotion: %s %2.f%%"% (faceAttribs.top_emotion, faceAttribs.top_emotion_conf)
             baldy_text = "Baldy: %2.f%%"% (faceAttribs.bald_conf)
 
             # finalText = textwrap.fill(finalText,26) #Wrap the text for future display
