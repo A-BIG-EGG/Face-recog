@@ -79,7 +79,7 @@ while True:
 
             bald_text = "I am %2.f%% sure that %s a baldy."% (faceAttribs.bald_conf, faceAttribs.gender_noun_s)
 
-            iSeeText = "I see a %s age %d, %s%s. "% (faceAttribs.gender, faceAttribs.age, top_emotion_txt, glasses_txt) #Build sentence describing the results
+            iSeeText = "I see a %s age %d, %s. "% (faceAttribs.gender, faceAttribs.age, top_emotion_txt) #Build sentence describing the results
             finalText = iSeeText + bald_text
             finalText = textwrap.fill(finalText,26) #Wrap the text for future display
             image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
