@@ -32,17 +32,19 @@ epd.init(epd.FULL_UPDATE)
 epd.Clear(0xFF)
 epd.init(epd.PART_UPDATE)
 time_draw.rectangle((120, 80, 220, 105), fill = 255)
-time_draw.text((120, 80), '3', font = font40, fill = 0)
+time_draw.text((35, 45), '3', font = font40, fill = 0)
 epd.displayPartial(epd.getbuffer(time_image.transpose(Image.ROTATE_180)))
 time_draw.rectangle((120, 80, 220, 105), fill = 255)
-time_draw.text((120, 80), '2', font = font40, fill = 0)
+time_draw.text((65, 45), '2', font = font40, fill = 0)
 epd.displayPartial(epd.getbuffer(time_image.transpose(Image.ROTATE_180)))
 time_draw.rectangle((120, 80, 220, 105), fill = 255)
-time_draw.text((120, 80), '1', font = font40, fill = 0)
+time_draw.text((95, 45), '1', font = font40, fill = 0)
 epd.displayPartial(epd.getbuffer(time_image.transpose(Image.ROTATE_180)))
 time.sleep(1)
 
 camera.capture("img.jpg") #Save image as .jpg
+epd.init(epd.FULL_UPDATE)
+epd.Clear(0xFF)
 
 body = open('img.jpg','rb').read() #Read image in API call-firendly format
 
