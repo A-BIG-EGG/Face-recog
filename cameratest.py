@@ -21,7 +21,7 @@ faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontal
 
 #Set up e-paper display with font definitions etc
 epd = epd2in13_V2.EPD()
-font15 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 15)
+font20 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 20)
 font60 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 60)
 time_image = Image.new('1', (epd.height, epd.width), 255)
 time_draw = ImageDraw.Draw(time_image)
@@ -75,12 +75,12 @@ if len(faces) > 0: #Action if there are faces in the frame
 
         top_emotion_txt = "%s top emotion is %s at %2.f %% confidence"% (faceAttribs.gender_possessive, faceAttribs.top_emotion, faceAttribs.top_emotion_conf)
 
-        iSeeText = "I see a %s age %d %s. %s. "% (faceAttribs.gender, faceAttribs.age, top_emotion_txt, glasses_txt)
-        iSeeText = textwrap.fill(iSeeText,30)
+        iSeeText = "I see a %s age %d %s. %s. "% (faceAttribs.gender, faceAttribs.age, top_emotion_txt, glasses_txt) #Build sentence describing the results
+        iSeeText = textwrap.fill(iSeeText,30) #Wrap the text for future display
         image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
         draw = ImageDraw.Draw(image)
-        draw.text((10, 20), iSeeText, font = font15, fill = 0)
-        image = image.transpose(Image.ROTATE_180) #rotates image?
+        draw.text((10, 20), iSeeText, font = font20, fill = 0)
+        image = image.transpose(Image.ROTATE_180) #rotates image
         epd.display(epd.getbuffer(image))
         time.sleep(10)
         epd.init(epd.FULL_UPDATE)
@@ -91,8 +91,8 @@ else: #Action for no faces
     print('No faces detected')
     image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
     draw = ImageDraw.Draw(image)
-    draw.text((35, 45), 'No faces detected', font = font15, fill = 0)
-    image = image.transpose(Image.ROTATE_180) #rotates image?
+    draw.text((35, 45), 'No faces detected', font = font20, fill = 0)
+    image = image.transpose(Image.ROTATE_180) #rotates image
     epd.display(epd.getbuffer(image))
     time.sleep(2)
     epd.init(epd.FULL_UPDATE)
