@@ -66,8 +66,8 @@ def ms_GetFaceAttribs (face):
 
         faceAttribs.top_emotion = sort_emotion[0][0]
         faceAttribs.top_emotion_conf = sort_emotion[0][1] *100
-        #faceAttribs.top_haircolor = sort_haircolor[0][0]
-        #faceAttribs.top_haircolor_conf = sort_haircolor[0][1] *100
+        faceAttribs.top_haircolor = sort_haircolor[0][1]
+        faceAttribs.top_haircolor_conf = sort_haircolor[1][1] *100
         faceAttribs.profile_txt = "%s age %d"% (faceAttribs.gender, faceAttribs.age)
 
         return faceAttribs
