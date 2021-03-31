@@ -51,12 +51,13 @@ epd.init(epd.FULL_UPDATE) #Clear the display to prevent ghosting
 epd.Clear(0xFF)
 
 #Check image for faces
+img = cv2.imread("img.jpg")
 faces = faceCascade.detectMultiScale(
-    cv2.cvtColor("img.jpg", cv2.COLOR_BGR2GRAY),
+    cv2.cvtColor(img, cv2.COLOR_BGR2GRAY),
     scaleFactor=1.1,
     minNeighbors=5,
     minSize=(30, 30)
-)    
+)
 print('Number of faces: '+str(len(faces)))
 
 body = open('img.jpg','rb').read() #Read image in API call-firendly format
