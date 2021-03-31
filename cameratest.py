@@ -60,16 +60,20 @@ faces = faceCascade.detectMultiScale(
 )
 print('Number of faces: '+str(len(faces)))
 
-if len(faces) > 0:
+if len(faces) > 0: #Action if there are faces in the frame
     body = open('img.jpg','rb').read() #Read image in API call-firendly format
-
     try:
         response = ms_WhoDoYouSee(body) #Call API- see ms_cognitive_imagerec for details and options
         print("RESPONSE:" + str(response.json())) #Prints json response to the console
 
     except Exception as e:
         print(e)
-else:
+else: #Action for no faces
     print('No faces detected')
+        image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
+        draw = ImageDraw.Draw(image)
+        draw.text((35, 45), 'No faces detected', font = font60, fill = 0)
+        image = image.transpose(Image.ROTATE_180) #rotates image?
+        epd.display(epd.getbuffer(image))
 
 os.remove("img.jpg")
