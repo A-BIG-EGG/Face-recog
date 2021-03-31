@@ -1,4 +1,4 @@
-'\n'import cv2
+import cv2
 import sys
 import os
 import logging as log
