@@ -25,11 +25,16 @@ camera.hflip = True
 epd = epd2in13_V2.EPD()
 epd.init(epd.FULL_UPDATE)
 epd.Clear(0xFF)
-image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
-draw = ImageDraw.Draw(image)
-draw.text((35, 45), 'Ready?', font = font40, fill = 0)
-image = image.transpose(Image.ROTATE_180) #rotates image?
-epd.display(epd.getbuffer(image))
+epd.init(epd.PART_UPDATE)
+time_draw.rectangle((120, 80, 220, 105), fill = 255)
+time_draw.text((120, 80), '3', font = font24, fill = 0)
+epd.displayPartial(epd.getbuffer(time_image.transpose(Image.ROTATE_180)))
+time_draw.rectangle((120, 80, 220, 105), fill = 255)
+time_draw.text((120, 80), '2', font = font24, fill = 0)
+epd.displayPartial(epd.getbuffer(time_image.transpose(Image.ROTATE_180)))
+time_draw.rectangle((120, 80, 220, 105), fill = 255)
+time_draw.text((120, 80), '1', font = font24, fill = 0)
+epd.displayPartial(epd.getbuffer(time_image.transpose(Image.ROTATE_180)))
 time.sleep(1)
 
 camera.capture("img.jpg") #Save image as .jpg
