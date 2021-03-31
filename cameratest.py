@@ -18,18 +18,18 @@ camera.capture("img.jpg")
 
 body = open('img.jpg','rb').read()
 
-headers = {
-    'Content-Type': 'application/json',
-    'Ocp-Apim-Subscription-Key': 'a760241aebe44b1c80eab0e5e42425c7',
-}
-
-params = {
-    'returnFaceId': 'true',
-   # 'returnFaceLandmarks': 'false',
-    'returnFaceAttributes': 'age,gender,smile,emotion,glasses,hair',
-}
-
-FaceApiDetect = 'https://uksouthface.cognitiveservices.azure.com/face/v1.0/detect'
+# headers = {
+#     'Content-Type': 'application/json',
+#     'Ocp-Apim-Subscription-Key': 'a760241aebe44b1c80eab0e5e42425c7',
+# }
+#
+# params = {
+#     'returnFaceId': 'true',
+#    # 'returnFaceLandmarks': 'false',
+#     'returnFaceAttributes': 'age,gender,smile,emotion,glasses,hair',
+# }
+#
+# FaceApiDetect = 'https://uksouthface.cognitiveservices.azure.com/face/v1.0/detect'
 
 try:
     # REST Call
