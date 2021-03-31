@@ -45,7 +45,7 @@ while True:
     time_draw.text((95, 35), '2', font = font60, fill = 0)
     epd.displayPartial(epd.getbuffer(time_image.transpose(Image.ROTATE_180)))
     time_draw.rectangle((120, 80, 220, 105), fill = 255)
-    time_draw.text((180, 35), '1', font = font60, fill = 0)
+    time_draw.text((185, 35), '1', font = font60, fill = 0)
     epd.displayPartial(epd.getbuffer(time_image.transpose(Image.ROTATE_180)))
     time.sleep(1)
 
@@ -77,7 +77,7 @@ while True:
 
             top_emotion_txt = "%s top emotion is %s at %2.f %% confidence"% (faceAttribs.gender_possessive, faceAttribs.top_emotion, faceAttribs.top_emotion_conf)
 
-            iSeeText = "I see a %s age %d %s. %s. "% (faceAttribs.gender, faceAttribs.age, top_emotion_txt, glasses_txt) #Build sentence describing the results
+            iSeeText = "I see a %s age %d %s, %s"% (faceAttribs.gender, faceAttribs.age, top_emotion_txt, glasses_txt) #Build sentence describing the results
             iSeeText = textwrap.fill(iSeeText,26) #Wrap the text for future display
             image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
             draw = ImageDraw.Draw(image)
