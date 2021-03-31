@@ -17,6 +17,11 @@ import traceback
 
 font15 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 15)
 font40 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 40)
+time_image = Image.new('1', (epd.height, epd.width), 255)
+time_draw = ImageDraw.Draw(time_image)
+epd.init(epd.FULL_UPDATE)
+epd.displayPartBaseImage(epd.getbuffer(time_image))
+
 camera = PiCamera() #Define camera (won't work on non-pi devices)
 camera.vflip = True #Rotate image by flipping v and h
 camera.hflip = True
