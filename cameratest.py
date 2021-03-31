@@ -2,7 +2,6 @@ import cv2
 import sys
 import os
 import logging as log
-import datetime as dt
 import time
 from lib.ms_cognitive_imagerec import ms_WhatDoYouSee, ms_WhoDoYouSee, ms_GetFaceAttribs, FaceAttribs
 from PIL import Image,ImageDraw,ImageFont
@@ -65,7 +64,7 @@ if len(faces) > 0: #Action if there are faces in the frame
     try:
         response = ms_WhoDoYouSee(body) #Call API- see ms_cognitive_imagerec for details and options
         print("RESPONSE:" + str(response.json())) #Prints json response to the console
-
+        faceAttribs = ms_GetFaceAttribs (response)
     except Exception as e:
         print(e)
 else: #Action for no faces
