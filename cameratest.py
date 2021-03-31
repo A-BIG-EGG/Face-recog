@@ -8,12 +8,12 @@ from lib.ms_cognitive_imagerec import ms_WhatDoYouSee, ms_WhoDoYouSee, ms_GetFac
 from PIL import Image,ImageDraw,ImageFont
 import requests
 from picamera import PiCamera
-from waveshare_epd import epd2in13_V2
-import traceback
 picdir = 'pic'
 libdir = 'lib'
 if os.path.exists(libdir):
     sys.path.append(libdir)
+from waveshare_epd import epd2in13_V2
+import traceback
 
 font15 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 15)
 font40 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 40)
