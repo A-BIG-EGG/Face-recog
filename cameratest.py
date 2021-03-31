@@ -12,7 +12,7 @@ picdir = 'pic'
 libdir = 'lib'
 if os.path.exists(libdir):
     sys.path.append(libdir)
-from waveshare_epd import epd2in13_V2
+from lib.waveshare_epd import epd2in13_V2
 import traceback
 
 #Define face detection cascades
