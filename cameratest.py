@@ -77,7 +77,7 @@ while True:
 
             top_emotion_txt = "%s top emotion is %s at %2.f%% confidence"% (faceAttribs.gender_possessive, faceAttribs.top_emotion, faceAttribs.top_emotion_conf)
 
-            bald_text = "I have %2.f%% confidence that %s is a baldy."% (faceAttribs.bald_conf, faceAttribs.gender_noun)
+            bald_text = "I am %2.f%% sure that %s a baldy."% (faceAttribs.bald_conf, faceAttribs.gender_noun_s)
 
             iSeeText = "I see a %s age %d, %s%s. "% (faceAttribs.gender, faceAttribs.age, top_emotion_txt, glasses_txt) #Build sentence describing the results
             finalText = iSeeText + bald_text
