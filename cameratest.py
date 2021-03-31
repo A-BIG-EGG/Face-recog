@@ -3,6 +3,7 @@ import sys
 import os
 import logging as log
 import time
+import textwrap
 from lib.ms_cognitive_imagerec import ms_WhatDoYouSee, ms_WhoDoYouSee, ms_GetFaceAttribs, FaceAttribs
 from PIL import Image,ImageDraw,ImageFont
 import requests
@@ -75,9 +76,10 @@ if len(faces) > 0: #Action if there are faces in the frame
         top_emotion_txt = "%s top emotion is %s at %2.f %% confidence"% (faceAttribs.gender_possessive, faceAttribs.top_emotion, faceAttribs.top_emotion_conf)
 
         iSeeText = "I see a %s age %d %s. %s. "% (faceAttribs.gender, faceAttribs.age, top_emotion_txt, glasses_txt)
+        iSeeText = textwrap.fill(iSeeText,30)
         image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
         draw = ImageDraw.Draw(image)
-        draw.text((35, 45), iSeeText, font = font15, fill = 0)
+        draw.text((10, 20), iSeeText, font = font15, fill = 0)
         image = image.transpose(Image.ROTATE_180) #rotates image?
         epd.display(epd.getbuffer(image))
         time.sleep(10)
