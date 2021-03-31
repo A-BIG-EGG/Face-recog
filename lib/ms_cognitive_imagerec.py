@@ -63,12 +63,10 @@ def ms_GetFaceAttribs (face):
         else:
             faceAttribs.glasses_txt = "wearing %s"% (faceAttribs.glasses)
 
-        print(sort_haircolor[0]["color"])
-        print(sort_emotion)
         faceAttribs.top_emotion = sort_emotion[0][0]
         faceAttribs.top_emotion_conf = sort_emotion[0][1] *100
         faceAttribs.top_haircolor = sort_haircolor[0]["color"]
-        if faceAttribs.top_haircolor == 'blond'
+        if faceAttribs.top_haircolor == 'blond':
             faceAttribs.top_haircolor = 'blonde'
             pass
         faceAttribs.top_haircolor_conf = sort_haircolor[0]["confidence"] *100
