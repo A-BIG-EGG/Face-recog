@@ -45,7 +45,7 @@ time_draw.text((175, 35), '1', font = font60, fill = 0)
 epd.displayPartial(epd.getbuffer(time_image.transpose(Image.ROTATE_180)))
 time.sleep(1)
 
-camera.capture("img.jpg") #Save image as .jpg
+camera.capture("img.jpg") #Save current camera frame as img.jpg
 epd.init(epd.FULL_UPDATE) #Clear the display to prevent ghosting
 epd.Clear(0xFF)
 
@@ -65,7 +65,7 @@ if len(faces) > 0: #Action if there are faces in the frame
         response = ms_WhoDoYouSee(body) #Call API- see ms_cognitive_imagerec for details and options
         print("RESPONSE:" + str(response.json())) #Prints json response to the console
         faceAttribs = ms_GetFaceAttribs (response)
-        print(faceAttribs.top_emotion())
+        print(response["faceAttributes"]["age"])
     except Exception as e:
         print(e)
 else: #Action for no faces
