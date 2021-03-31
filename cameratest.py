@@ -9,33 +9,18 @@ import requests
 from picamera import PiCamera
 import time
 
-camera = PiCamera()
-camera.vflip = True
+camera = PiCamera() #Define camera (won't work on non-pi devices)
+camera.vflip = True #Rotate image by flipping v and h
 camera.hflip = True
-time.sleep(2)
+time.sleep(1)
 
-camera.capture("img.jpg")
+camera.capture("img.jpg") #Save image as .jpg
 
-body = open('img.jpg','rb').read()
-
-# headers = {
-#     'Content-Type': 'application/json',
-#     'Ocp-Apim-Subscription-Key': 'a760241aebe44b1c80eab0e5e42425c7',
-# }
-#
-# params = {
-#     'returnFaceId': 'true',
-#    # 'returnFaceLandmarks': 'false',
-#     'returnFaceAttributes': 'age,gender,smile,emotion,glasses,hair',
-# }
-#
-# FaceApiDetect = 'https://uksouthface.cognitiveservices.azure.com/face/v1.0/detect'
+body = open('img.jpg','rb').read() #Read image in API call-firendly format
 
 try:
-    # REST Call
-    #response = requests.post(FaceApiDetect, data=body, headers=headers, params=params)
-    response = ms_WhoDoYouSee(body)
-    print("RESPONSE:" + str(response.json()))
+    response = ms_WhoDoYouSee(body) #Call API- see ms_cognitive_imagerec for details and options
+    print("RESPONSE:" + str(response.json())) #Prints json response to the console
 
 except Exception as e:
     print(e)
