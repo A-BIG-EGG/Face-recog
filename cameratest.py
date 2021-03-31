@@ -69,7 +69,7 @@ if len(faces) > 0:
 
     except Exception as e:
         print(e)
-else
+else:
     print('No faces detected')
 
 os.remove("img.jpg")
