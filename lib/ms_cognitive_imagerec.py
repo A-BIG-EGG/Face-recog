@@ -56,7 +56,7 @@ def ms_GetFaceAttribs (face):
         haircolor = face["faceAttributes"]["hair"]["hairColor"]
 
         sort_emotion = sorted(emotion.items(), key=operator.itemgetter(1), reverse=True)
-        #sort_haircolor = sorted(haircolor.items(), key=lambda d: d["confidence"], reverse=True)
+        sort_haircolor = sorted(haircolor, key=lambda d: d["confidence"], reverse=True)
 
         if faceAttribs.glasses == 'NoGlasses':
             faceAttribs.glasses_txt = "No Glasses"
