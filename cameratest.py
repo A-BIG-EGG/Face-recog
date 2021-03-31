@@ -67,6 +67,7 @@ if len(faces) > 0: #Action if there are faces in the frame
         for face in response:
             n += 1
             faceAttribs = ms_GetFaceAttribs (face)
+        print(faceAttribs.top_emotion)
     except Exception as e:
         print(e)
 else: #Action for no faces
