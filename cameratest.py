@@ -56,6 +56,7 @@ faces = faceCascade.detectMultiScale(
     scaleFactor=1.1,
     minNeighbors=5,
     minSize=(30, 30)
+)    
 print('Number of faces: '+str(len(faces)))
 
 body = open('img.jpg','rb').read() #Read image in API call-firendly format
