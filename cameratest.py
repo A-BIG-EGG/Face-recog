@@ -15,6 +15,7 @@ if os.path.exists(libdir):
 from waveshare_epd import epd2in13_V2
 import traceback
 
+epd = epd2in13_V2.EPD()
 font15 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 15)
 font40 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 40)
 time_image = Image.new('1', (epd.height, epd.width), 255)
@@ -27,7 +28,6 @@ camera.vflip = True #Rotate image by flipping v and h
 camera.hflip = True
 
 #Alert user to image being taken
-epd = epd2in13_V2.EPD()
 epd.init(epd.FULL_UPDATE)
 epd.Clear(0xFF)
 epd.init(epd.PART_UPDATE)
