@@ -15,6 +15,11 @@ if os.path.exists(libdir):
 from waveshare_epd import epd2in13_V2
 import traceback
 
+#Define face detection cascades
+cascPath = "haarcascade_frontalface_default.xml"
+faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+
+#Set up e-paper display with font definitions etc
 epd = epd2in13_V2.EPD()
 font15 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 15)
 font60 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 60)
@@ -27,9 +32,8 @@ camera = PiCamera() #Define camera (won't work on non-pi devices)
 camera.vflip = True #Rotate image by flipping v and h
 camera.hflip = True
 
-#Alert user to image being taken
-# epd.init(epd.FULL_UPDATE)
-# epd.Clear(0xFF)
+#Alert user to image being taken with a 3,2,1 countdown, partially refreshed
+#Rotation must be there because the screen is upside down lol
 epd.init(epd.PART_UPDATE)
 time_draw.rectangle((120, 80, 220, 105), fill = 255)
 time_draw.text((15, 35), '3', font = font60, fill = 0)
@@ -43,8 +47,16 @@ epd.displayPartial(epd.getbuffer(time_image.transpose(Image.ROTATE_180)))
 time.sleep(1)
 
 camera.capture("img.jpg") #Save image as .jpg
-epd.init(epd.FULL_UPDATE)
+epd.init(epd.FULL_UPDATE) #Clear the display to prevent ghosting
 epd.Clear(0xFF)
+
+#Check image for faces
+faces = faceCascade.detectMultiScale(
+    cv2.cvtColor("img.jpg", cv2.COLOR_BGR2GRAY),
+    scaleFactor=1.1,
+    minNeighbors=5,
+    minSize=(30, 30)
+print('Number of faces: '+str(len(faces)))
 
 body = open('img.jpg','rb').read() #Read image in API call-firendly format
 
