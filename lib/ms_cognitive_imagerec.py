@@ -53,7 +53,7 @@ def ms_GetFaceAttribs (face):
             faceAttribs.gender_possessive_cap = "Her"
 
         emotion = face["faceAttributes"]["emotion"]
-        haircolor = face["faceAttributes"]["hair"]["hairColor"]
+        haircolor = face["faceAttributes"]["hair"]["hairColor"]["color"]
 
         sort_emotion = sorted(emotion.items(), key=operator.itemgetter(1), reverse=True)
         sort_haircolor = sorted(haircolor.items(), key=operator.itemgetter("confidence"), reverse=True)
