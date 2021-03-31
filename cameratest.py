@@ -70,10 +70,10 @@ if len(faces) > 0: #Action if there are faces in the frame
         print(e)
 else: #Action for no faces
     print('No faces detected')
-        image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
-        draw = ImageDraw.Draw(image)
-        draw.text((35, 45), 'No faces detected', font = font60, fill = 0)
-        image = image.transpose(Image.ROTATE_180) #rotates image?
-        epd.display(epd.getbuffer(image))
+    image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
+    draw = ImageDraw.Draw(image)
+    draw.text((35, 45), 'No faces detected', font = font60, fill = 0)
+    image = image.transpose(Image.ROTATE_180) #rotates image?
+    epd.display(epd.getbuffer(image))
 
 os.remove("img.jpg")
