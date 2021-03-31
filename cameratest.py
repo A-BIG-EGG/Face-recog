@@ -72,8 +72,11 @@ else: #Action for no faces
     print('No faces detected')
     image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
     draw = ImageDraw.Draw(image)
-    draw.text((35, 45), 'No faces detected', font = font60, fill = 0)
+    draw.text((35, 45), 'No faces detected', font = font15, fill = 0)
     image = image.transpose(Image.ROTATE_180) #rotates image?
     epd.display(epd.getbuffer(image))
+    time.sleep(2)
+    epd.init(epd.FULL_UPDATE)
+    epd.Clear(0xFF)
 
 os.remove("img.jpg")
