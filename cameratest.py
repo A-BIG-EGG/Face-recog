@@ -1,5 +1,6 @@
 import cv2
 import sys
+import os
 import logging as log
 import datetime as dt
 from time import sleep
@@ -24,3 +25,5 @@ try:
 
 except Exception as e:
     print(e)
+
+os.remove("img.jpg")
