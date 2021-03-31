@@ -39,11 +39,11 @@ def ms_GetFaceAttribs (face):
         faceAttribs.glasses = face["faceAttributes"]["glasses"]
 
         if faceAttribs.gender == 'male' :
-            faceAttribs.gender_noun = "He"
-            faceAttribs.gender_possessive = "His"
+            faceAttribs.gender_noun = "he"
+            faceAttribs.gender_possessive = "his"
         else:
-            faceAttribs.gender_noun= "She"
-            faceAttribs.gender_possessive = "Her"
+            faceAttribs.gender_noun= "she"
+            faceAttribs.gender_possessive = "her"
 
         emotion = face["faceAttributes"]["emotion"]
         sort_emotion = sorted(emotion.items(), key=operator.itemgetter(1), reverse=True)
