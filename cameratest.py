@@ -67,7 +67,22 @@ if len(faces) > 0: #Action if there are faces in the frame
         for face in response:
             n += 1
             faceAttribs = ms_GetFaceAttribs (face)
-        print(faceAttribs.top_emotion)
+        if faceAttribs.glasses == 'NoGlasses':
+            glasses_txt = ""
+        else:
+            glasses_txt = "%s is wearing %s"% (faceAttribs.gender_noun, faceAttribs.glasses)
+
+        top_emotion_txt = "%s top emotion is %s at %2.f %% confidence"% (faceAttribs.gender_possessive, faceAttribs.top_emotion, faceAttribs.top_emotion_conf)
+
+        iSeeText = "I see a %s age %d %s. %s. "% (faceAttribs.gender, faceAttribs.age, top_emotion_txt, glasses_txt)
+        image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
+        draw = ImageDraw.Draw(image)
+        draw.text((35, 45), iSeeText, font = font15, fill = 0)
+        image = image.transpose(Image.ROTATE_180) #rotates image?
+        epd.display(epd.getbuffer(image))
+        time.sleep(10)
+        epd.init(epd.FULL_UPDATE)
+        epd.Clear(0xFF)
     except Exception as e:
         print(e)
 else: #Action for no faces
