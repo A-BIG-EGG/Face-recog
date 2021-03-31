@@ -3,7 +3,7 @@ import sys
 import os
 import logging as log
 import datetime as dt
-from time import sleep
+import time
 from lib.ms_cognitive_imagerec import ms_WhatDoYouSee, ms_WhoDoYouSee, ms_GetFaceAttribs, FaceAttribs
 from PIL import Image,ImageDraw,ImageFont
 import requests
