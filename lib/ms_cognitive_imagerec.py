@@ -37,6 +37,7 @@ def ms_GetFaceAttribs (face):
         faceAttribs.age = face["faceAttributes"]["age"]
         faceAttribs.gender = face["faceAttributes"]["gender"]
         faceAttribs.glasses = face["faceAttributes"]["glasses"]
+        faceAttribs.bald_conf = face["hair"]["bald"]*100
 
         if faceAttribs.gender == 'male' :
             faceAttribs.gender_noun = "he"
