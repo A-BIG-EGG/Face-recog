@@ -60,13 +60,16 @@ faces = faceCascade.detectMultiScale(
 )
 print('Number of faces: '+str(len(faces)))
 
-body = open('img.jpg','rb').read() #Read image in API call-firendly format
+if len(faces) > 0:
+    body = open('img.jpg','rb').read() #Read image in API call-firendly format
 
-try:
-    response = ms_WhoDoYouSee(body) #Call API- see ms_cognitive_imagerec for details and options
-    print("RESPONSE:" + str(response.json())) #Prints json response to the console
+    try:
+        response = ms_WhoDoYouSee(body) #Call API- see ms_cognitive_imagerec for details and options
+        print("RESPONSE:" + str(response.json())) #Prints json response to the console
 
-except Exception as e:
-    print(e)
+    except Exception as e:
+        print(e)
+else
+    print('No faces detected')
 
 os.remove("img.jpg")
