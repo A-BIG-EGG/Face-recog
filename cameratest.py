@@ -82,7 +82,7 @@ while True:
             baldy_text = "Baldy: %2.f%%"% (faceAttribs.bald_conf)
 
             #finalText = textwrap.fill(finalText,26) #Wrap the text for future display
-            finalText = '\n'.join([age_text,hair_text,emotion_text,baldy_text])
+            finalText = age_text + "\n" + hair_text + "\n" + emotion_text + "\n" + baldy_text
             image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
             draw = ImageDraw.Draw(image)
             draw.text((10, 20), finalText, font = font20, fill = 0)
