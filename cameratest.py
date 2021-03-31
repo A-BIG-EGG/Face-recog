@@ -42,10 +42,10 @@ while True:
     time_draw.text((15, 35), '3', font = font60, fill = 0)
     epd.displayPartial(epd.getbuffer(time_image.transpose(Image.ROTATE_180)))
     time_draw.rectangle((120, 80, 220, 105), fill = 255)
-    time_draw.text((15, 35), '3  2', font = font60, fill = 0)
+    time_draw.text((15, 35), '3   2', font = font60, fill = 0)
     epd.displayPartial(epd.getbuffer(time_image.transpose(Image.ROTATE_180)))
     time_draw.rectangle((120, 80, 220, 105), fill = 255)
-    time_draw.text((15, 35), '3  2  1', font = font60, fill = 0)
+    time_draw.text((15, 35), '3   2   1', font = font60, fill = 0)
     epd.displayPartial(epd.getbuffer(time_image.transpose(Image.ROTATE_180)))
     time.sleep(1)
 
