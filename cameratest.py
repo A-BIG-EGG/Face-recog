@@ -30,6 +30,7 @@ epd.displayPartBaseImage(epd.getbuffer(time_image))
 camera = PiCamera() #Define camera (won't work on non-pi devices)
 camera.vflip = True #Rotate image by flipping v and h
 camera.hflip = True
+n = 0
 
 #Alert user to image being taken with a 3,2,1 countdown, partially refreshed
 #Rotation must be there because the screen is upside down lol
