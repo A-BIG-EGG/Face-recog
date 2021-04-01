@@ -33,7 +33,7 @@ n = 0
 epd.init(epd.FULL_UPDATE)
 epd.Clear(0xFF)
 image = Image.open(os.path.join(picdir, 'bd1.bmp'))
-epd.display(epd.getbuffer(image))
+epd.display(epd.getbuffer(image.transpose(Image.ROTATE_180)))
 time.sleep(5)
 
 while True:
