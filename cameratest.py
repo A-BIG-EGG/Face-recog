@@ -30,6 +30,12 @@ camera.vflip = True #Rotate image by flipping v and h
 camera.hflip = True
 n = 0
 
+epd.init(epd.FULL_UPDATE)
+epd.Clear(0xFF)
+image = Image.open(os.path.join(picdir, 'bd1.bmp'))
+epd.display(epd.getbuffer(image))
+time.sleep(5)
+
 while True:
     #Alert user to image being taken with a 3,2,1 countdown, partially refreshed
     #Rotation must be there because the screen is upside down lol
