@@ -4,16 +4,6 @@ from collections import namedtuple
 import operator
 from config import face_api_sub_key, face_api_endpoint, vision_api_sub_key, vision_api_endpoint
 
-# change this
-#   the subscription and endpoints for Face API and Vision API
-#   make sure endpoint is correct for your region, default is western us
-# face_api_sub_key = config.face_api_sub_key
-# face_api_endpoint = 'https://uksouthface.cognitiveservices.azure.com/face/v1.0/detect'
-#
-# vision_api_sub_key = 'cfad2127edc14f7f87466cf03731044b'
-# vision_api_endpoint = 'https://uksouthvision.cognitiveservices.azure.com/'
-
-
 class FaceAttribs(object):
     """__init__() functions as the class constructor"""
     def __init__(self, age=None, gender=None, gender_noun=None, gender_possessive=None, glasses=None, glasses_txt=None, top_emotion=None, top_emotion_conf=None, profile_txt=None):
