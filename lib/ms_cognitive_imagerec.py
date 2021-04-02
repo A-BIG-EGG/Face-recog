@@ -2,15 +2,16 @@ import http.client, urllib, base64, json
 import requests
 from collections import namedtuple
 import operator
+from config import face_api_sub_key, face_api_endpoint, vision_api_sub_key, vision_api_endpoint
 
 # change this
 #   the subscription and endpoints for Face API and Vision API
 #   make sure endpoint is correct for your region, default is western us
-face_api_sub_key = 'a760241aebe44b1c80eab0e5e42425c7'
-face_api_endpoint = 'https://uksouthface.cognitiveservices.azure.com/face/v1.0/detect'
-
-vision_api_sub_key = 'cfad2127edc14f7f87466cf03731044b'
-vision_api_endpoint = 'https://uksouthvision.cognitiveservices.azure.com/'
+# face_api_sub_key = config.face_api_sub_key
+# face_api_endpoint = 'https://uksouthface.cognitiveservices.azure.com/face/v1.0/detect'
+#
+# vision_api_sub_key = 'cfad2127edc14f7f87466cf03731044b'
+# vision_api_endpoint = 'https://uksouthvision.cognitiveservices.azure.com/'
 
 
 class FaceAttribs(object):
