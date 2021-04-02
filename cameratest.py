@@ -59,7 +59,7 @@ while True:
     epd.init(epd.FULL_UPDATE) #Clear the display to prevent ghosting
     epd.Clear(0xFF)
 
-    #Check image for faces
+    #Check image for faces and set params for cascade
     img = cv2.imread("img.jpg")
     faces = faceCascade.detectMultiScale(
         cv2.cvtColor(img, cv2.COLOR_BGR2GRAY),
@@ -76,18 +76,11 @@ while True:
             for face in response:
                 n += 1
                 faceAttribs = ms_GetFaceAttribs (face)
-            # top_emotion_txt = "%s top emotion is %s at %2.f%% confidence"% (faceAttribs.gender_possessive, faceAttribs.top_emotion, faceAttribs.top_emotion_conf)
-            #
-            # bald_text = "I'm %2.f%% sure that %s a baldy."% (faceAttribs.bald_conf, faceAttribs.gender_noun_s)
-            #
-            # iSeeText = "I see a %s age %d, %s. "% (faceAttribs.gender, faceAttribs.age, top_emotion_txt) #Build sentence describing the results
-            # finalText = iSeeText + bald_text
+            #Build text to display on e-paper
             age_text = "Age: %d"% (faceAttribs.age)
             hair_text = "Hair colour: %s %2.f%%"% (faceAttribs.top_haircolor, faceAttribs.top_haircolor_conf)
             emotion_text = "Emotion: %s %2.f%%"% (faceAttribs.top_emotion, faceAttribs.top_emotion_conf)
             baldy_text = "Baldy: %2.f%%"% (faceAttribs.bald_conf)
-
-            # finalText = textwrap.fill(finalText,26) #Wrap the text for future display
             finalText = age_text + '\n' + hair_text + '\n' + emotion_text + '\n' + baldy_text
             image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
             draw = ImageDraw.Draw(image)
